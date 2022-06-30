@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "netflix_sansbold";
+  src: url("../assets/fonts/netflix_sans_bold-webfont.woff2") format("woff2"),
+    url("../assets/fonts/netflix_sans_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "netflix_sanslight";
+  src: url("../assets/fonts/netflix_sans_light-webfont.woff2") format("woff2"),
+    url("../assets/fonts/netflix_sans_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "netflix_sansmedium";
+  src: url("../assets/fonts/netflix_sans_medium-webfont.woff2") format("woff2"),
+    url("../assets/fonts/netflix_sans_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    font-family: "netflix_sanslight";
+  }
+  .ease-transition {
+    @apply ease-in duration-100;
+  }
+  .btn {
+    @apply inline-block gap-2 px-5 py-2.5 font-bold text-xs uppercase rounded shadow-md hover:shadow-md focus:shadow-md active:shadow-md ease-transition;
+    &:disabled {
+      opacity: 0.5;
+    }
+    &.primary {
+      @apply text-white bg-primary hover:bg-primary/70 focus:bg-primary/70 active:bg-primary/60;
+    }
+    &.secondary {
+      @apply bg-gray-600 text-white hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800;
+    }
+    &.link {
+      @apply p-0 shadow-none text-white underline hover:opacity-80 focus:opacity-80 active:opacity-60;
+    }
+  }
+}
