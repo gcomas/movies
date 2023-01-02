@@ -40,5 +40,9 @@
       ]
     }
   ],
-  "favourites": []
+  "favourites": [
+    {
+      "id": 3
+    }
+  ]
 }
