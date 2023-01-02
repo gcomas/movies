@@ -4,7 +4,6 @@ import { buttons } from "./constants";
 
 const AddFavoritesButton = ({ isFavorite, isLoading, onClick }) => (
   <button
-    type="button"
     className="flex items-center btn secondary"
     onClick={onClick}
     disabled={isLoading}

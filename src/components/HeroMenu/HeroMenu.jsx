@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import AddFavoritesButton from "./AddFavoritesButton";
 import { getRandomNumberInclusive } from "helpers/mathFunctions";
-import useMoveParallax from "hooks/useMoveParallax";
+import useMoveParallax from "hooks/events/useMoveParallax";
 import { useHeroData } from "hooks/useHeroeData";
 import { useFavouritesData } from "hooks/useFavouritesData";
 import { useAddFavouriteItem } from "hooks/useAddFavourite";
-import { useGetMovies } from "../../hooks/useGetMovies";
 
 const HeroMenu = () => {
   const { coords, getCoords, ref } = useMoveParallax();
