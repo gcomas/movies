@@ -5,15 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "server": "npx json-server --watch -p 3333 bd.json",
-    "start": "node server.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^0.26.0",
-    "clone": "^2.1.2",
-    "json-server": "^0.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.4.0",
@@ -22,7 +18,7 @@
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3",
-    "tw-elements": "^1.0.0-alpha12"
+    "tw-elements": "^1.0.0-alpha13"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.0",
