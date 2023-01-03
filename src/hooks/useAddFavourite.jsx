@@ -2,7 +2,7 @@ import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
 
 const addItem = (id) => {
-  return axios.post("http://localhost:3333/favourites", { id });
+  return axios.post(`${import.meta.env.VITE_SERVER_PATH}/favourites`, { id });
 };
 
 export const useAddFavouriteItem = () => {
@@ -16,7 +16,7 @@ export const useAddFavouriteItem = () => {
       const favourites = queryClient.getQueryData("favourites").data;
       if (favourites.some((item) => item?.id === id)) {
         axios
-          .delete(`http://localhost:3333/favourites/${id}`)
+          .delete(`${import.meta.env.VITE_SERVER_PATH}/favourites/${id}`)
           .then(() => queryClient.invalidateQueries("favourites"));
       }
     },
