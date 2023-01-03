@@ -6,37 +6,32 @@ const MovieSlider = ({ search, title }) => {
 
   return (
     <>
-      <h1 className="capitalize text-white">{title}</h1>
+      <h1 className="capitalize text-white font-bold p-3">{title}</h1>
+
       <article className="flex px-4 flex-nowrap gap-7 py-3 snap-x snap-mandatory w-full overflow-auto">
         {movies?.data?.Search.map(({ Title, Poster, Year }) => (
           <div
             key={Poster}
-            className="snap-center flex flex-col md:flex-row h-[370px] md:h-[250px] min-w-[200px] md:min-w-[400px] rounded-lg bg-gradient-to-t from-gray-800 to-gray-900  overflow-hidden"
+            className="relative snap-center snap-always flex flex-col md:flex-row min-w-[150px] h-[250px] rounded-lg overflow-hidden bg-contain bg-center"
+            style={{
+              backgroundImage: `url(${Poster})`,
+            }}
           >
-            <div className="min-w-[130px] overflow-hidden">
-              <img src={Poster} className="md:h-full w-full" alt={Title} />
-            </div>
-            <div className="flex flex-col h-full justify-between p-3 md:p-5 md:w-[250px] ">
-              <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-2">
-                {Title}
-              </h5>
-              <div className="flex flex-col gap-2">
-                <span className="block text-right text-sm text-gray-900 dark:text-white">
+            <div className="group/item absolute flex flex-col justify-between h-full w-[100%] hover:fill-teal-50">
+              <div className=" bg-gradient-to-b from-black p-2  opacity-0 group-hover/item:opacity-100 pb-28">
+                <p className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-2">
+                  {Title}
+                </p>
+                <span className="block text-xs mt-2 text-gray-900 dark:text-white">
                   Year: {Year}
                 </span>
-                <button
-                  type="button"
-                  className="btn primary shadow-gray-900/50 small"
-                >
-                  Information
-                </button>
-                <button
-                  type="button"
-                  className="btn secondary py-2 font-light shadow-gray-900/50 small"
-                >
-                  Add to favourites
-                </button>
               </div>
+              <button
+                type="button"
+                className="btn primary shadow-gray-900/50 small m-2 opacity-0 group-hover/item:opacity-100"
+              >
+                see more
+              </button>
             </div>
           </div>
         ))}
